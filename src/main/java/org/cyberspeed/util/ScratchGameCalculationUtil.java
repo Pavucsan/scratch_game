@@ -81,4 +81,33 @@ public class ScratchGameCalculationUtil {
         }
         return false;
     }
+
+    public static void calculateReward(Map<String, List<String>> appliedWinningCombinations,
+                                                     int bettingAmount) {
+        reward = 0;
+
+        for (Map.Entry<String, List<String>> entry : appliedWinningCombinations.entrySet()) {
+            String symbol = entry.getKey();
+            List<String> winCombinationList = entry.getValue();
+
+            Symbol symbolData = symbols.get(symbol);
+            if (symbolData == null) {
+                System.out.println("Symbol data not found for symbol: " + symbol);
+                continue;
+            }
+
+            double winReward = bettingAmount * symbolData.getRewardMultiplier();
+            double symbolReward = 0.0;
+
+            for (String appliedList : winCombinationList) {
+                WinCombination winCombination = winCombinations.get(appliedList);
+                winReward *= winCombination.getRewardMultiplier();
+                symbolReward += winReward;
+            }
+
+            reward += (int) symbolReward;
+        }
+    }
+
+
 }

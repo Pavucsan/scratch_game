@@ -24,9 +24,12 @@ public class ScratchGame {
         Map<String, List<String>> winCombinations = ScratchGameCalculationUtil.getWinningCombinations(matrix);
         //System.out.println("winCombinations:"+winCombinations);
 
+        //reward calculate
+        ScratchGameCalculationUtil.calculateReward(winCombinations, bettingAmount);
 
 
         System.out.println("{\n\"matrix\": " + matrix + ",");
+        System.out.println("\"reward\": " + ScratchGameCalculationUtil.reward + ",");
         System.out.println("\"applied_winning_combinations\": " + winCombinations + ",");
 
 

@@ -11,8 +11,21 @@ import java.util.Map;
 public class ScratchGame {
     public static void main(String[] args) {
         //java -jar scratch-game.jar config.json 100
-        String configFile = args[0];
-        int bettingAmount = Integer.parseInt(args[1]);
+        String configFile = null;// = args[0];
+        int bettingAmount = 0;// = Integer.parseInt(args[1]);
+
+
+        for (int i = 0; i < args.length; i++) {
+            if ("--config".equals(args[i])) {
+                configFile = args[++i];
+            } else if ("--betting-amount".equals(args[i])) {
+                try {
+                    bettingAmount = Integer.parseInt(args[++i]);
+                } catch (NumberFormatException e) {
+                    System.err.println("Invalid betting amount: " + args[i]);
+                }
+            }
+        }
 
         LoadFileService.loadConfigFile(configFile);
 

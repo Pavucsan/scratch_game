@@ -108,6 +108,38 @@ public class ScratchGameCalculationUtil {
             reward += (int) symbolReward;
         }
     }
+    public static List<String> getBonusSymbol(List<List<String>> matrix) {
+        List<String> bonusSymbols = new ArrayList<>();
+        int reward = 0;
+
+        for (List<String> row : matrix) {
+            for (String symbol : row) {
+                if (isBonusSymbol(symbol)) {
+                    bonusSymbols.add(symbol);
+                    reward = calculateBonusSymbolReward(symbol, symbols.get(symbol), reward);
+                }
+            }
+        }
+        return bonusSymbols;
+    }
+
+    private static boolean isBonusSymbol(String symbol) {
+        return !symbol.equalsIgnoreCase("MISS") && bonusSymbolProbabilities.containsKey(symbol);
+    }
+
+    private static int calculateBonusSymbolReward(String symbol, Symbol symbolDetails, int reward) {
+        if (symbolDetails == null) {
+            return reward;
+        }
+
+        if (symbol.equalsIgnoreCase("10x") || symbol.equalsIgnoreCase("5x")) {
+            reward *= (int) symbolDetails.getRewardMultiplier();
+        } else if (symbol.equalsIgnoreCase("+1000") || symbol.equalsIgnoreCase("+500")) {
+            reward += symbolDetails.getExtra();
+        }
+
+        return reward;
+    }
 
 
 }

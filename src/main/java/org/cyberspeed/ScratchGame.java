@@ -24,10 +24,14 @@ public class ScratchGame {
         //reward calculate
         ScratchGameCalculationUtil.calculateReward(winCombinations, bettingAmount);
 
+        // bonus
+        List<String> bonusSymbol = ScratchGameCalculationUtil.getBonusSymbol(matrix);
+
 
         System.out.println("{\n\"matrix\": " + matrix + ",");
         System.out.println("\"reward\": " + ScratchGameCalculationUtil.reward + ",");
         System.out.println("\"applied_winning_combinations\": " + winCombinations + ",");
+        System.out.println("\"applied_bonus_symbol\": " + bonusSymbol + "\n}");
 
 
     }

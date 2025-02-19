@@ -70,7 +70,8 @@ public class LoadFileService {
             winCombination.setRewardMultiplier(winCombinationData.containsKey("reward_multiplier") ? ((Number) winCombinationData.get("reward_multiplier")).doubleValue() : 0.0);
 
             //log.info("winCombinationData-when: " + (String) winCombinationData.get("when"));
-            winCombination.setCount(((Long) winCombinationData.get("count")).intValue());
+            //winCombination.setCount(((Long) winCombinationData.get("count")).intValue());
+            winCombination.setCount(winCombinationData.containsKey("count") ? ((Long) winCombinationData.get("count")).intValue() : 0);
             winCombination.setGroup((String) winCombinationData.get("group"));
             winCombination.setWhen((String) winCombinationData.get("when"));
 

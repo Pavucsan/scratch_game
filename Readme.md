@@ -17,8 +17,6 @@ User will place a bet with any amount which we call *betting amount* in this ass
   official [Oracle JDK website](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) or
   use [OpenJDK](https://adoptopenjdk.net/).
 
-## Application Works ##
-
 ## Steps to Run Test:
 
 1. **Run Test**:
@@ -45,3 +43,19 @@ User will place a bet with any amount which we call *betting amount* in this ass
       ```bash
       java -jar scratch-game.jar --config config.json --betting-amount 100
       ```
+3. **Run in IDE**
+   ![IDE config](Document/img/run-config1.png "sdfsd")
+
+
+## Application Works ##
+1. **Won Game**
+
+    ![Won Game](Document/img/won_game.png "Won game")
+
+2. **Loss Game**
+
+    ![Loss Game](Document/img/loss_game.png "Loss game")
+
+3. **Bonus earn**
+
+    ![Bonus](Document/img/bonus.png "won with bonus")

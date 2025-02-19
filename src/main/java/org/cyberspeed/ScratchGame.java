@@ -1,6 +1,7 @@
 package org.cyberspeed;
 
 import org.cyberspeed.service.LoadFileService;
+import org.cyberspeed.util.FormatterUtil;
 import org.cyberspeed.util.MatrixUtil;
 import org.cyberspeed.util.ScratchGameCalculationUtil;
 
@@ -27,12 +28,7 @@ public class ScratchGame {
         // bonus
         List<String> bonusSymbol = ScratchGameCalculationUtil.getBonusSymbol(matrix);
 
-
-        System.out.println("{\n\"matrix\": " + matrix + ",");
-        System.out.println("\"reward\": " + ScratchGameCalculationUtil.reward + ",");
-        System.out.println("\"applied_winning_combinations\": " + winCombinations + ",");
-        System.out.println("\"applied_bonus_symbol\": " + bonusSymbol + "\n}");
-
-
+        FormatterUtil.printGameResponse(matrix, ScratchGameCalculationUtil.reward, winCombinations, bonusSymbol);
     }
+
 }

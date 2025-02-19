@@ -19,7 +19,7 @@ public class ScratchGame {
 
         // get matrix
         List<List<String>> matrix = MatrixUtil.getRandomMatrix();
-                //getMatrix();
+        //
 
         System.out.println("{\n\"matrix\": " + matrix + ",");
 

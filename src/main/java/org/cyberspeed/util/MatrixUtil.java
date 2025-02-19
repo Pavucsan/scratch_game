@@ -52,7 +52,6 @@ public class MatrixUtil {
         if (randomNumber <= totalStandardProbabilities) {
             return getStandardSymbol(symbolList, randomNumber);
         }
-
         return getBonusSymbol(randomNumber - totalStandardProbabilities);
     }
 

@@ -19,7 +19,7 @@ import java.util.Map;
 import java.util.logging.Logger;
 
 public class LoadFileService {
-    private static final Logger log = Logger.getLogger(LoadFileService.class.getName());
+    //private static final Logger log = Logger.getLogger(LoadFileService.class.getName());
 
     public static void loadConfigFile(String configFile) {
         try {
@@ -55,7 +55,7 @@ public class LoadFileService {
             }
 
         } catch (IOException | ParseException e) {
-            log.warning("Error loading configuration file: "+ configFile);
+            //log.warning("Error loading configuration file: "+ configFile);
             e.printStackTrace();
         }
     }

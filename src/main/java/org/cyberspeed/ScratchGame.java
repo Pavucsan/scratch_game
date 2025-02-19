@@ -18,6 +18,7 @@ public class ScratchGame {
 
         // get matrix
         List<List<String>> matrix = MatrixUtil.getRandomMatrix();
+
         // find wining combinations
         Map<String, List<String>> winCombinations = ScratchGameCalculationUtil.getWinningCombinations(matrix);
         //System.out.println("winCombinations:"+winCombinations);

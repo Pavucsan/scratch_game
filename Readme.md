@@ -41,7 +41,7 @@ User will place a bet with any amount which we call *betting amount* in this ass
     - Find the scratch-game.jar from the target directory:
     - run the following command in your terminal
       ```bash
-      java -jar scratch-game.jar --config config.json --betting-amount 100
+      java -jar scratch-game-jar-with-dependencies.jar --config config.json --betting-amount 100
       ```
 3. **Run in IDE**
    ![IDE config](Document/img/run-config1.png "sdfsd")
